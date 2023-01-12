@@ -1,31 +1,34 @@
-const apiEntry = "https://www.breakingbadapi.com/api/";
+import { DOMSelectors } from "./DOM";
+import "../styles/style.css";
 
-console.log(fetch(apiEntry));
+const api = "https://www.breakingbadapi.com/api/characters/";
+
+console.log(fetch(api));
 
 // fetch() returns a "response", which we must convert into a object json format
-fetch(apiEntry)
+fetch(api)
   .then((response) => response.json()) // use the `.json()` method
   .then((data) => console.log(data)); // `.json()` is also async, chain another `.then()` to log the object
 
-async function fetchData(apiEntry) {
+async function fetchData(api) {
   try {
-    const response = await fetch(apiEntry);
+    const response = await fetch(api);
     const data = await response.json();
     console.log(data);
     return data;
-  } catch (err) {
-    console.error(err);
+  } catch (error) {
+    console.error(error);
   }
 }
-fetchData(apiEntry);
+fetchData(api);
 
 // paired with DOM selectors, you can display dynamic data onto your HTML!
 const apiResponseDOM = document.getElementById("api-response");
 const putcharacterInHTML = async () => {
   // defining an async arrow function
-  const character = await fetchData(apiEntry);
-  apiResponseDOM.innerHTML = `character: ${quote.content}`;
+  const character = await fetchData(api);
+  apiResponseDOM.innerHTML = `character:`;
 };
 putcharacterInHTML();
 
-export { apiEntry };
+export { api };
