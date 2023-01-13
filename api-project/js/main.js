@@ -1,8 +1,7 @@
 import { DOMSelectors } from "./DOM";
 import "../styles/style.css";
-
-const api = "https://www.breakingbadapi.com/api/characters/";
-
+import { apiLinks } from "./DOM";
+/*
 console.log(fetch(api));
 
 // fetch() returns a "response", which we must convert into a object json format
@@ -31,4 +30,5 @@ const putcharacterInHTML = async () => {
 };
 putcharacterInHTML();
 
-export { api };
+export { apiResponseDOM };
+ */

@@ -7,4 +7,4 @@ const apiLinks = {
     api: document.getElementById("https://www.breakingbadapi.com/api/characters/"),
 };
 
-export { DOMSelectors };
+export { DOMSelectors, apiLinks };
