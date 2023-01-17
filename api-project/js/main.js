@@ -1,7 +1,8 @@
 import { DOMSelectors } from "./DOM";
 import "../styles/style.css";
-import { apiLinks } from "./DOM";
-/*
+// import { apiLinks } from "./DOM";
+
+const api = "https://valorant-api.com/v1/agents";
 console.log(fetch(api));
 
 // fetch() returns a "response", which we must convert into a object json format
@@ -21,14 +22,11 @@ async function fetchData(api) {
 }
 fetchData(api);
 
-// paired with DOM selectors, you can display dynamic data onto your HTML!
+/* // paired with DOM selectors, you can display dynamic data onto your HTML!
 const apiResponseDOM = document.getElementById("api-response");
 const putcharacterInHTML = async () => {
   // defining an async arrow function
   const character = await fetchData(api);
   apiResponseDOM.innerHTML = `character:`;
 };
-putcharacterInHTML();
-
-export { apiResponseDOM };
- */
+putcharacterInHTML(); */

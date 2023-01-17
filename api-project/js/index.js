@@ -1,17 +1,17 @@
-import { DOMSelectors } from "./DOM";
+/* import { DOMSelectors } from "./DOM";
 import "../styles/style.css";
 import { apiLinks } from "./DOM";
 
-console.log(fetch(api));
+console.log(fetch(apiLinks.api));
 
 // fetch() returns a "response", which we must convert into a object json format
-fetch(api)
+fetch(apiLinks.api)
   .then((response) => response.json()) // use the `.json()` method
   .then((data) => console.log(data)); // `.json()` is also async, chain another `.then()` to log the object
 
 async function fetchData(api) {
   try {
-    const response = await fetch(api);
+    const response = await fetch(apiLinks.api);
     const data = await response.json();
     console.log(data);
     return data;
@@ -28,6 +28,4 @@ const putcharacterInHTML = async () => {
   const character = await fetchData(api);
   apiResponseDOM.innerHTML = `character:`;
 };
-putcharacterInHTML();
-
-export { apiResponseDOM };
+putcharacterInHTML(); */

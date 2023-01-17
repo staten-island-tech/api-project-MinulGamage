@@ -8,5 +8,15 @@ body,
 }
 
 .searchBtn {
-  
+  height: 10rem;
+  width: 7rem;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.search {
+  height: 10rem;
+  width: 25rem;
+  text-align: center;
+  font-size: 2rem;
 }

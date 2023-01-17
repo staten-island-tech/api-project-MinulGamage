@@ -3,10 +3,10 @@ const DOMSelectors = {
   box: document.getElementById("card"),
 };
 
-const apiLinks = {
+/* const apiLinks = {
   api: document.getElementById("https://valorant-api.com/v1/agents"),
 };
 
-console.log(apiLinks);
+console.log(apiLinks); */
 
-export { DOMSelectors, apiLinks };
+export { DOMSelectors };
