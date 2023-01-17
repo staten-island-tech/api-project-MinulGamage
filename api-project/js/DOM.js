@@ -3,8 +3,10 @@ const DOMSelectors = {
   box: document.getElementById("card"),
 };
 
-const apiLinks = { 
-    api: document.getElementById("https://www.breakingbadapi.com/api/characters/"),
+const apiLinks = {
+  api: document.getElementById("https://valorant-api.com/v1/agents"),
 };
+
+console.log(apiLinks);
 
 export { DOMSelectors, apiLinks };
