@@ -28,8 +28,11 @@ const putcharacterInHTML = async () => {
   // defining an async arrow function
   const character = await fetchData(api);
   apiResponseDOM.innerHTML = ` <div class="card-info" id="card">
-  <h2>Agent:${api.displayName}</h2>
-  <q>Description: ${api.description}</q>
+  <h2 class="AgentName"> Agent: ${api.displayName} </h2>
+
+  <q class="Description"> Description: ${api.description}</q>
   </div>`;
 };
 putcharacterInHTML();
+
+DOMSelectors.button.addEventListener;

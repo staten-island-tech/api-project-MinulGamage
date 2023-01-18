@@ -12,6 +12,8 @@ body,
   width: 7rem;
   text-align: center;
   font-size: 2rem;
+  border: solid black 3px;
+  border-radius: 10%;
 }
 
 .search {
@@ -19,4 +21,18 @@ body,
   width: 25rem;
   text-align: center;
   font-size: 2rem;
+  margin: 5px;
+  border: solid black 3px;
+  border-radius: 10%;
+}
+
+.card-info {
+  height: 30rem;
+  width: 30rem;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  border: solid black 3px;
+  border-radius: 10%;
+  margin: 5px;
 }
