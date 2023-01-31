@@ -1,14 +1,9 @@
 import { DOMSelectors } from "./DOM";
 import "../styles/style.css";
 
-const data = ["https://valorant-api.com/v1/agents"];
+const data = "https://valorant-api.com/v1/agents";
 
-const filterAPI = data
-  .filter((data) => data.displayName === `${DOMSelectors.input}`)
-  .forEach((data) => {
-    console.log(data.displayName);
-  });
-
+console.log(data.displayName);
 /* const agent = document.querySelector("#displayName");
 const AgentSearch = `${api}${agent}`;
 console.log(AgentSearch); */
@@ -18,16 +13,27 @@ fetch(data)
   .then((response) => response.json())
   .then((data) => console.log(data));
 
-async function fetchData(api) {
+/* data
+  .filter((data) => data.displayName === `${DOMSelectors.input}`)
+  .forEach((data) => {
+    console.log(data.displayName);
+  }); */
+
+async function fetchData(data) {
   try {
     const response = await fetch(data);
     const api = await response.json();
-    console.log(api);
-    return api;
+    console.log(api.message);
+    const filterAPI = Object.values(data)
+      .filter((data) => data.displayName === `${DOMSelectors.input}`)
+      .forEach((data) => {
+        console.log(data.displayName);
+      });
+    return filterAPI;
   } catch (error) {
     const apiResponseDOM = document.getElementById("api-response");
     apiResponseDOM.innerHTML = `<h2>Error has occured. Make sure spelling is correct.</h2>`;
-    console.error(error);
+    console.log(error);
   }
 }
 fetchData(data);
