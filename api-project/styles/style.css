@@ -7,12 +7,42 @@ body,
   font-size: 62.5%;
 }
 
+:root{
+  --light-blue: #2998ff;
+  --dark-blue: #135cc5;
+  --light-red: #f87171;
+  --dark-red: #dc2626;
+  --dark-brown:#5C4033;
+  --brown: #964B00;
+  --beige: #ffe4c4;
+  --black:#000000;
+  --gray: #252c30;
+  --silver: 	#C0C0C0;
+  --gold: #CD853F;
+  --ash: #544C4A;
+  --cool-brown: #C1ABA6;
+  --primary: var(--light-red);
+  --secondary: var(--black);
+}
+
+body {
+ background-color: var(--black);
+}
+
+.header {
+font-size: 4rem;
+color: var(--light-red);
+text-align: center;
+}
+
 .searchBtn {
   height: 10rem;
   width: 7rem;
   text-align: center;
   font-size: 2rem;
-  border: solid black 3px;
+  border: solid var(--light-red) 3px;
+  background-color: var(--ash);
+  color: var(--light-red);
   border-radius: 10%;
 }
 
@@ -22,7 +52,9 @@ body,
   text-align: center;
   font-size: 2rem;
   margin: 5px;
-  border: solid black 3px;
+  border: solid var(--light-red) 3px;
+  background-color: var(--ash);
+  color: var(--light-red);
   border-radius: 10%;
 }
 
@@ -32,7 +64,9 @@ body,
   display: flex;
   justify-content: center;
   text-align: center;
-  border: solid black 3px;
+  border: solid var(--light-red) 3px;
+  background-color: var(--ash);
+  color: var(--light-red);
   border-radius: 10%;
   margin: 5px;
 }
