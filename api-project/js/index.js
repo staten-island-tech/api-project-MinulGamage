@@ -1,53 +1,43 @@
 import { DOMSelectors } from "./DOM";
 import "../styles/style.css";
 
-const data = "https://valorant-api.com/v1/agents";
+let url = "https://valorant-api.com/v1/agents";
 
-console.log(data.displayName);
-/* const agent = document.querySelector("#displayName");
-const AgentSearch = `${api}${agent}`;
-console.log(AgentSearch); */
-
-// fetch() returns a "response", which we must convert into a object json format
-fetch(data)
+fetch(url)
   .then((response) => response.json())
-  .then((data) => console.log(data));
-
-/* data
-  .filter((data) => data.displayName === `${DOMSelectors.input}`)
-  .forEach((data) => {
-    console.log(data.displayName);
-  }); */
-
-async function fetchData(data) {
-  try {
-    const response = await fetch(data);
-    const api = await response.json();
-    console.log(api.message);
-    const filterAPI = Object.values(data)
-      .filter((data) => data.displayName === `${DOMSelectors.input}`)
-      .forEach((data) => {
-        console.log(data.displayName);
-      });
-    return filterAPI;
-  } catch (error) {
-    const apiResponseDOM = document.getElementById("api-response");
-    apiResponseDOM.innerHTML = `<h2>Error has occured. Make sure spelling is correct.</h2>`;
-    console.log(error);
-  }
-}
-fetchData(data);
+  .then((url) => console.log(url));
 
 DOMSelectors.button.addEventListener("click", function (event) {
-  const apiResponseDOM = document.getElementById("api-response");
-  const putcharacterInHTML = async () => {
-    const character = await fetchData(data);
-    apiResponseDOM.innerHTML = ` <div class="card-info" id="card">
-  <h2 class="AgentName"> Agent: ${data.displayName} </h2>
-  <img src="${data.bustPortrait}" alt="Image of Valorant Agent">
-  <q class="Description"> Description: ${data.description}</q>
-  </div>`;
+  const fetchData = async function datafetch() {
+    try {
+      const response = await fetch(url);
+      const data = await response.json();
+      let array = Object.values(data);
+      const filteredArray = array.filter(
+        (item) => item.displayName === `${DOMSelectors.input.value}`
+      );
+      return filteredArray;
+    } catch (error) {
+      console.error(error);
+    }
   };
-  putcharacterInHTML();
+
+  const apiResponseDOM = document.getElementById("api-response");
+  const putCharacterInHTML = async function datafetch2() {
+    const newArray = await fetchData();
+    if (newArray.length) {
+      const character = newArray[0];
+      apiResponseDOM.innerHTML = ` <div class="card-info" id="card">
+        <h2 class="AgentName"> Agent: ${character.displayName} </h2>
+        <img src="${character.bustPortrait}" alt="Image of Valorant Agent">
+        <q class="Description"> Description: ${character.description}</q>
+      </div>`;
+    } else {
+      apiResponseDOM.innerHTML = `<div class="card-info" id="card"> 
+      <h2 class="Error"> No character found. Make sure to check spelling </h2>
+      </div>`;
+    }
+  };
+  putCharacterInHTML();
   event.preventDefault();
 });

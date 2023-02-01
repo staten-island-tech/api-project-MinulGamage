@@ -27,12 +27,16 @@ body,
 }
 
 .card-info {
-  height: 30rem;
-  width: 30rem;
+  height: 50rem;
+  width: 50rem;
   display: flex;
   justify-content: center;
   text-align: center;
   border: solid black 3px;
   border-radius: 10%;
   margin: 5px;
+}
+
+.Error {
+  font-size: 6rem;
 }
