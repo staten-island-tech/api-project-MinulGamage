@@ -8,18 +8,19 @@ fetch(url)
   .then((url) => console.log(url));
 
 DOMSelectors.button.addEventListener("click", function (event) {
-  const fetchData = async function datafetch() {
+  const fetchData = async function datafetch(url) {
     try {
       const response = await fetch(url);
       const data = await response.json();
       let array = Object.values(data);
       const filteredArray = array.filter(
-        (item) => item.displayName === `${DOMSelectors.input.value}`
+        (url) => url.displayName === `${DOMSelectors.input.value}`
       );
       return filteredArray;
     } catch (error) {
       console.error(error);
     }
+    datafetch(url);
   };
 
   const apiResponseDOM = document.getElementById("api-response");
