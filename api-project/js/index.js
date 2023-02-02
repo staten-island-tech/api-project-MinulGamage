@@ -26,7 +26,7 @@ DOMSelectors.button.addEventListener("click", function (event) {
   const apiResponseDOM = document.getElementById("api-response");
   const putCharacterInHTML = async function datafetch2() {
     const newArray = await fetchData();
-    if (newArray.length) {
+    if (newArray.length > 0) {
       const character = newArray[0];
       apiResponseDOM.innerHTML = ` <div class="card-info" id="card">
         <h2 class="AgentName"> Agent: ${character.displayName} </h2>
