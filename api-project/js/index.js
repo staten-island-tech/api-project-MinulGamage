@@ -39,6 +39,7 @@ DOMSelectors.button.addEventListener("click", function (event) {
       </div>`;
     }
   };
+  datafetch2();
   putCharacterInHTML();
   event.preventDefault();
 });
