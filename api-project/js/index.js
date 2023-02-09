@@ -3,12 +3,8 @@ import "../styles/style.css";
 
 let url = "https://valorant-api.com/v1/agents";
 
-fetch(url)
-  .then((response) => response.json())
-  .then((url) => console.log(url));
-
 DOMSelectors.button.addEventListener("click", function (event) {
-  const fetchData = async function datafetch(url) {
+ async function datafetch(url) {
     try {
       const response = await fetch(url);
       const data = await response.json();
@@ -16,6 +12,7 @@ DOMSelectors.button.addEventListener("click", function (event) {
       const filteredArray = array.filter(
         (url) => url.displayName === `${DOMSelectors.input.value}`
       );
+      console.log(array)
       return filteredArray;
     } catch (error) {
       console.error(error);
@@ -24,8 +21,8 @@ DOMSelectors.button.addEventListener("click", function (event) {
   };
 
   const apiResponseDOM = document.getElementById("api-response");
-  const putCharacterInHTML = async function datafetch2() {
-    const newArray = await fetchData();
+async function datafetch2() {
+await fetchData();
       apiResponseDOM.innerHTML = ` <div class="card-info" id="card">
         <h2 class="AgentName"> Agent: ${character.displayName} </h2>
         <img src="${character.bustPortrait}" alt="Image of Valorant Agent">
@@ -37,7 +34,7 @@ DOMSelectors.button.addEventListener("click", function (event) {
       </div>`;
     }
   };
+  fetch
   datafetch2();
-  putCharacterInHTML();
   event.preventDefault();
 });
