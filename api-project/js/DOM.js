@@ -4,6 +4,7 @@ const DOMSelectors = {
   input: document.getElementById("Searchinput"),
   valorant_html: document.querySelector("#displayName"),
   Api: document.getElementById("https://valorant-api.com/v1/agents"),
+  apiResponseDOM: document.getElementById("api-response"),
 };
 
 export { DOMSelectors };
